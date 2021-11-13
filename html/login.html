@@ -5,26 +5,56 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../css/styles.css">
+    <script src="http://code.jquery.com/jquery-1.7.min.js"></script>
+    <script src="../js/login.js"></script>
+    
     <title>Login</title>
 </head>
 <body>
+
+    
     
     <header>
         <h1>Login Form</h1>
     </header>
+    
+    <div id="icey">
     <form>
-        <label></label>Username:</label>
+        <label>Username:</label>
         <input type="text">
 
         <br />
 
-        <label>Password:</label>
-        <input type="password">
+        <label id="passwordA">Password:</label>
+        <input type="password" >
 
         <br />
-        <button type="submit">Submit</button>
+
+        <label id="PasswordD">Confirm Password:</label>
+        <input type="password" >
+
+        <p id="alertPassword"></p>
+
+        <br />
+        <button type="submit" id="button">Submit</button>
+    </div>
+        
+
+
+        
     </form>
 
+    <div id="tester">
+        <ul>
+            <li id="A" class="invalid">Begins with Letter</li>
+            <li id="B" class="invalid">Password more than 3 Letters</li>
+            <li id="C" class="invalid">Password more than 8 charactersh</li>
+            <li id="D" class="invalid">One upper-case Letter</li>
+            <li id="E" class="invalid">One special character</li>
+            <li id="1" class="invalid">Mach</li>
+            <li>password good</li>
+</ul>
+</div>
     
 </body>
 <!--<footer><img src="Images/plagg.jpeg" alt="Sorry this image is not available"></footer>-->

@@ -1,4 +1,6 @@
-h1 {
+
+
+    h1 {
     text-align: center;
     padding: 4px;
     border-radius: 20%;
@@ -30,4 +32,41 @@ button{
 }
 button:hover{
 background-color:rgb(248, 193, 97)
+}
+
+
+
+#tester {
+    
+    bottom:-75px;
+    display: inline-block;
+    bottom:-115px\9;
+    color:black;
+    right:55px;
+    width:250px;
+    padding:15px;
+    background:#fefefe;
+font-size:.875em;
+border-radius:5px;
+box-shadow:0 1px 3px #ccc;
+
+
+
+border:1px solid #ddd;
+
+
+}
+
+.invalid {
+    background:url(../css/cross.png) no-repeat 0 50%;
+    padding-left:22px;
+    line-height:24px;
+    color:#ec3f41;
+}
+
+.valid {
+    background:url(../css/accept.png) no-repeat 0 50%;
+    padding-left:22px;
+    line-height:24px;
+    color:green;
 }
