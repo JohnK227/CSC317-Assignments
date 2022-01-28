@@ -5,44 +5,67 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../css/styles.css">
+    <script src="http://code.jquery.com/jquery-1.7.min.js"></script>
+    <script src="../js/login.js"></script>
     <title>Registration</title>
 </head>
-<body>
+<body class="container">
     <header>
         <h1>
             Registration
         </h1>
     </header>
 
-    <form  >
+    <div>
+    <form id="icey">
+        <br />
         <label>Email:</label>
-        <input id="email" type="text">
         <br />
-        <label>Password:</label>
-        <input type="password" id="password1">
+        <input type="email" required>
         <br />
-        <label>Confirm Password:</label>
-        <input type="password" id="password2">
+        <label  id="passwordA">Password:</label>
+        <input type="password">
+        <br />
+        <label  id="passwordD">Confirm Password:</label>
+        <input id="passwordD1" type="password">
         <br />
         <label>Confirm you are 13 years of age or older</label>
-        <input type="checkbox">
+        <input type="checkbox" required>
 
         <br />
-        <label>
-        I accept the
-        </label>
-        <a href="#">TOS and Privacy Rules</a>
-        <input type="checkbox">
-
-        <span id = "message" style="color:red"> </span>
-
     
+    <label>I accept the </label>
+        <a href="#">TOS and Privacy Rules</a>
+        <input id= "box" type="checkbox" required>
+
+
+        
 
         <br>
         <button type="submit" id="button1">Submit Registration</button>
+    </div>
     </form>
+    
 
-    <script type="text/javascript" src="../js/registration.js"></script>
+    
+
+        <div id="tester">
+        <ul>
+            <h3 id="title">Password Requirements</h3>
+            <label id="A" class="invalid">Must begin with a letter</label>
+            <br />
+            <label id="B" class="invalid">Must be 3 or more letters</label>
+            <br />
+            <label id="C" class="invalid">Must be 8 or more characters</label>
+            <br />
+            <label id="D" class="invalid">Contain one uppercase letter</label>
+            <br />
+            <label id="E" class="invalid">Contain one special character</label>
+            <br />
+            <label id="1" class="invalid">Passwords Match</label>
+</ul>
+</div>
+
 </body>
 
 <!--<footer>

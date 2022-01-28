@@ -8,3 +8,14 @@
     margin: 4px;
     width: 100%;
 }
+
+#photo{
+    height: 100%;
+    width: 100%;
+    grid-area: photos;
+    text-align: center
+}
+
+.style{
+    margin: 0, auto;
+}

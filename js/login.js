@@ -4,13 +4,18 @@ $(document).ready(function() {
 
 
 
-var passwordD = document.getElementById("passwordD");
-let email = document.getElementById("email");
 
-$('input[type=password]').keyup(function() {
+let email = document.getElementById("email");
+var count =0;
+
+$('input[type=password]').keyup(function(event) {
     var passwordA = $(this).val();
     var passwordD = $(this).val();
-        if (passwordA.length >8) {
+
+    var pw1 = document.getElementById("passwordA");
+    var pw2 = document.getElementById("passwordD");
+
+        if (passwordA.length >=8) {
             $('#C').removeClass('invalid').addClass('valid');
         }
         else  {
@@ -24,85 +29,98 @@ $('input[type=password]').keyup(function() {
             $('#A').removeClass('valid').addClass('invalid');
             
         }
+        
 
-        var count = 0;
-        let a = /[A-Z]/
-        let v = passwordA.match(a);
+    upper = /[A-Z]/;
+    lower = /[a-z]/;
 
-
-        if (passwordA(v)) {
-            count+=1;
-        }
-        else if (count < 3) {
-            $('#D').removeClass('valid').addClass('invalid');
-            else {
-                $('#D').removeClass('valid').addClass('invalid');
-        }
-
-        if (passwordA == passwordD) {
-
-            $('#1').removeClass('invalid').addClass('valid');
+    if (upper.test(passwordA)) {
+        $('#D').removeClass('invalid').addClass('valid');
         }
         else  {
-            $('#1').removeClass('valid').addClass('invalid');
-        
+            $('#D').removeClass('valid').addClass('invalid');
+    }
 
+    var key = event.keyCode || event.charCode;
+    if( key == 8  || key == 36 && passwordA.charCodeAt(passwordA.length) >=65 || passwordA.charCodeAt(passwordA.length) <=90){
+    	count-=1;
+    }
 
-
-
-        
-
-
-
-
-
-
-
-
-        }
+    if (lower.test(passwordA) || upper.test(passwordA)) {
+        count+=1;
+    }
     
+    if (count < 3) {
+        $('#B').removeClass('valid').addClass('invalid');
+    }
+    else if (count >= 3) {
+        $('#B').removeClass('invalid').addClass('valid');
+    }
+
+
+
+
+    words = /[\W]/;
+    score = /[_]/;
+    
+    if (words.test(passwordA) || score.test(passwordA)) {
+        $('#E').removeClass('invalid').addClass('valid');
+    }
+    else {
+        $('#E').removeClass('valid').addClass('invalid');
+    }
+
+
+
+    
+
+
+
+
+    
+
+
+
+
+    
+    
+
+
+
+    })
+
+    $('#icey').submit(function() {
+        if($('#A').hasClass('invalid') || $('#B').hasClass('invalid') || $('#C').hasClass('invalid') || $('#D').hasClass('invalid') || $('#E').hasClass('invalid')){
+            alert('Your password does not meet the requirements');
+            return false;
+        }
+    });
 });
 
 
-function confirmPassword() {
-    passwordC.preventDefault();
-    if (passwordA.value == passwordD.value) {
-        $('#1').removeClass('invalid').addClass('valid');
-    }
-    else  {
-        $('#1').removeClass('valid').addClass('invalid');
-        
-    }
-}
-
-lengthOfPassword();
 
 
-
-
-
-
-
-document.getElementById("button1").onclick = function() {
-    confirmPassword();
     
-}
+    
+$(document).ready(function () {
+    $('input[type=text]').keyup(function() {
+
+        var passwordA = getElementById("passwordA");
+    var passwordD = getElementById("passwordD");
+    if (passwordA.val() != passwordD.val()) {
+        $('#1').removeClass('valid').addClass('invalid');
+    }else {
+    $('#1').removeClass('invalid').addClass('valid');
+    }
+
+
+
+
+    
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+    })
 });
